@@ -19,8 +19,9 @@ const PlaceOrder = () => {
 
         const onSubmit = data => {  
           const {img, title, discription} = singleDetails;
-          const newOrder = {img, title, discription};
-          fetch('http://localhost:4000/order', {
+          const email = user.email;
+          const newOrder = {img, title, discription, email};
+          fetch('https://nameless-island-48040.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

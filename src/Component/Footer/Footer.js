@@ -2,9 +2,9 @@ import React from 'react';
 const Footer = () => {
     const footerStyle={
         height: '100px',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
     }
-    return (
+    return ( 
         <div style={footerStyle}>
             <div className="text-muted">
             <i className="fab fa-facebook p-3"></i>
