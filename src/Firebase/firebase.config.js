@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyB7oCOb46w3Nx8QVjd1ReIKsjtVkCGG314",
-    authDomain: "healthcare-bce2c.firebaseapp.com",
-    projectId: "healthcare-bce2c",
-    storageBucket: "healthcare-bce2c.appspot.com",
-    messagingSenderId: "636107029516",
-    appId: "1:636107029516:web:ea5fbd190709ed5f13c229"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
   };
   
   
