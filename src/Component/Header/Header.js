@@ -24,16 +24,15 @@ const Header = () => {
                 <Link className="nav-link active fw-bold" aria-current="page" to="/services">SERVICES</Link>
               </li>
               
-              
-              <li className="nav-item px-3">
-                <Link  className="nav-link active fw-bold" aria-current="page" to="/appointment">APPOINTMENT</Link>
-              </li>
               <li className="nav-item px-3">
                 <Link className="nav-link active fw-bold" aria-current="page" to="/contact">CONTACT</Link>
               </li>
               
               <li className="nav-item px-3">
                {user?.email && <Link className="nav-link active fw-bold" aria-current="page" to="/bookings">BOOKINGS</Link>}
+              </li>
+              <li className="nav-item px-3">
+               {user?.email && <Link className="nav-link active fw-bold" aria-current="page" to="/manageAllOrders">MANAGE ALL BOOKINGS</Link>}
               </li>
              
              <li className="nav-link active fw-bold px-2">
