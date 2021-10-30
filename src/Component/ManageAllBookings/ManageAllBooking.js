@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import OrderDetails from '../OrderDetails/OrderDetails';
+import AllBookingDetails from './AllBookingDetails';
 
 const ManageAllBooking = () => {
     const [orders, setOrders] = useState([]);
@@ -12,17 +13,17 @@ const ManageAllBooking = () => {
 
         return (
             <div className="Order p-4">
-            <h2 className="fw-bold text-start py-3 px-1">YOUR BOOKING</h2>
+            <h2 className="fw-bold text-start py-3 px-1">MANAGE ALL BOOKING</h2>
                
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-0 mx-2 ">
                {
-                        orders.map(order => <OrderDetails 
+                        orders.map(order => <AllBookingDetails 
                             key={order._id}
                             order={order}
                             orders= {orders}
                             setOrders={setOrders}
                         >
-                        </OrderDetails>)
+                        </AllBookingDetails>)
                     }
                     </div>
             </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 
-const OrderDetails = (props) => {
+const AllBookingDetails = (props) => {
    const {order, orders, setOrders} =props;
 
    const handleDeleteUser = id => {
-    const proceed = window.confirm('Are you sure, you want to cancel?');
+    const proceed = window.confirm('Are you sure, you want to delete?');
     if (proceed) {
         const url = `https://nameless-island-48040.herokuapp.com/orders/${id}`;
         fetch(url, {
@@ -29,11 +29,11 @@ const OrderDetails = (props) => {
                      <p><small> {order?.discription}</small></p>   
                      <div className="d-flex justify-content-between align-items-end">
                             <button className="btn btn-success">pending</button>
-                            <button  onClick={() => handleDeleteUser(order._id)} className="btn btn-danger ">Cannel</button>
+                            <button  onClick={() => handleDeleteUser(order._id)} className="btn btn-danger ">Delete</button>
                         </div>
                     </div>
                     </div>
         </div>
     );
 };
-export default OrderDetails;
+export default AllBookingDetails;
