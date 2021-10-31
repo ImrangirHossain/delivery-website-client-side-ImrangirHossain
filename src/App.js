@@ -6,13 +6,13 @@ import Login from './Component/Login/Login';
 import Notfound from './Component/NotFound/NotFound';
 import Contact from './Component/Contact/Contact';
 import AuthProvider from './Context/AuthProvider';
-import About from './Component/About/About';
 import Home from './Component/Home/Home';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import Services from './Component/Services/Services';
 import PlaceOrder from './Component/PlaceOrder/PlaceOrder';
 import Order from './Component/Order/Order';
 import ManageAllBooking from './Component/ManageAllBookings/ManageAllBooking';
+import AddService from './Component/AddService/AddService';
 
 function App() {
   return (
@@ -30,14 +30,14 @@ function App() {
             <Route path='/services'>
                 <Services></Services>
             </Route>
-            <Route path='/about'>
-              <About></About>
-            </Route>
             <Route path='/bookings'>
               <Order></Order>
             </Route>
             <Route path='/manageAllOrders'>
               <ManageAllBooking></ManageAllBooking>
+            </Route>
+            <Route path='/addServices'>
+              <AddService></AddService>
             </Route>
             <Route path='/contact'>
               <Contact></Contact>

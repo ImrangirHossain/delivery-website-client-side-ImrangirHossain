@@ -10,7 +10,7 @@ const PlaceOrder = () => {
     const {serviceId} = useParams();
     const [details, setDetails] = useState([]);
     useEffect(()=>(
-        fetch('http://nameless-island-48040.herokuapp.com/services')
+        fetch('https://nameless-island-48040.herokuapp.com/services')
         .then(res => res.json())
         .then(data => setDetails(data))
     ),[])
@@ -21,7 +21,7 @@ const PlaceOrder = () => {
           const {img, title, discription} = singleDetails;
           const email = user.email;
           const newOrder = {img, title, discription, email};
-          fetch('https://nameless-island-48040.herokuapp.com/orders', {
+          fetch('https://nameless-island-48040.herokuapp.com/orders/', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -55,7 +55,7 @@ const PlaceOrder = () => {
                  <div className="row row-cols-md-13 row-cols-1 g-4 mx-3  my-2">
                             
                  <div className="col">
-                 <label className="form-label">Your Name</label>
+                 <label className="form-label">Service Name</label>
                  <input defaultValue={singleDetails?.title} {...register("text")} className="form-control"  placeholder="Your Name*" required/>
         
                 </div>

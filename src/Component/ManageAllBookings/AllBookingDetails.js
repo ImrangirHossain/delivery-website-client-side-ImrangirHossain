@@ -27,8 +27,9 @@ const AllBookingDetails = (props) => {
                     <div className="card-body">
                     <h5 className="card-title">{order?.title}</h5>
                      <p><small> {order?.discription}</small></p>   
+                     <p className="text-muted text-start">Book By: {order?.email}</p>
                      <div className="d-flex justify-content-between align-items-end">
-                            <button className="btn btn-success">pending</button>
+                            <button className="btn btn-success">Pending</button>
                             <button  onClick={() => handleDeleteUser(order._id)} className="btn btn-danger ">Delete</button>
                         </div>
                     </div>
