@@ -1,24 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
-import { useEffect } from 'react/cjs/react.development';
-import useAuth from '../../hooks/useAuth';
 
 const AddService = () => {
-    const { register, handleSubmit, reset,  formState: { errors } } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
-    const {serviceId} = useParams();
-    const [details, setDetails] = useState([]);
-    useEffect(()=>(
-        fetch('https://nameless-island-48040.herokuapp.com/services')
-        .then(res => res.json())
-        .then(data => setDetails(data))
-    ),[])
-
-        const singleDetails = details.find(singleDetail => singleDetail.key === serviceId);
-
-        const onSubmit = data => {  
-            
+        const onSubmit = data => {            
           fetch('https://nameless-island-48040.herokuapp.com/services', {
             method: 'POST',
             headers: {
@@ -37,7 +23,7 @@ const AddService = () => {
     return (
         <div className="mb-4">
               <h2 className="my-2">ADD SERVICE</h2>
-                <form onSubmit={handleSubmit(onSubmit)} className=" form text-start mx-auto  w-50">
+                <form onSubmit={handleSubmit(onSubmit)} className=" form text-start mx-auto  col-12 col-md-6">
                  <div className="row row-cols-md-13 row-cols-1 g-4 mx-3  my-2">
                             
                  <div className="col">

@@ -31,15 +31,14 @@ const Header = () => {
               <li className="nav-item px-3">
                {user?.email && <Link className="nav-link active fw-bold my-1" aria-current="page" to="/bookings">BOOKINGS</Link>}
               </li>
+
               <li className="nav-item px-3">
                {user?.email && <Link className="nav-link active fw-bold my-1" aria-current="page" to="/manageAllOrders">MANAGE ALL BOOKINGS</Link>}
               </li>
+              
               <li className="nav-item px-3">
                {user?.email && <Link className="nav-link active fw-bold my-1" aria-current="page" to="/addServices">ADD SERVICE</Link>}
               </li>
-
-              
-
              <li className="nav-link active fw-bold px-2">
                 {!user?.email && <NavLink className="btn btn-outline-light" to="/Login">LOGIN</NavLink>}
                 {user?.email && <span><i className="far pe-1 fa-user-circle"></i>{user.email} </span>}

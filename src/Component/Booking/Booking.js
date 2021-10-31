@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-import OrderDetails from '../OrderDetails/OrderDetails';
-import './Order.css';
+import OrderDetails from '../BookingDetails/BookingDetails';
 
 const Order = () => {
-    const {user} = useAuth();
+    const {user, isLoading} = useAuth();
+
     const [orders, setOrders] = useState([]);
         useEffect(()=>{
             fetch('https://nameless-island-48040.herokuapp.com/orders')
             .then(res => res.json())
             .then(data=> setOrders(data))
         },[]);
-        const myOrders = orders.filter(order => order.email===user.email)
-   console.log(orders);
+
+    if (isLoading) {
+        return<div className="spinner-border text-info" role="status"></div>
+        }
+
+    const myOrders = orders.filter(order => order.email===user.email)
     return (
         <div className="Order p-4">
         <h2 className="fw-bold text-start py-3 px-1">YOUR BOOKING</h2>

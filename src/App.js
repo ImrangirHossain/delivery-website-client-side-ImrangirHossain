@@ -10,7 +10,7 @@ import Home from './Component/Home/Home';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import Services from './Component/Services/Services';
 import PlaceOrder from './Component/PlaceOrder/PlaceOrder';
-import Order from './Component/Order/Order';
+import Order from './Component/Booking/Booking';
 import ManageAllBooking from './Component/ManageAllBookings/ManageAllBooking';
 import AddService from './Component/AddService/AddService';
 

@@ -28,7 +28,7 @@ const OrderDetails = (props) => {
                     <h5 className="card-title">{order?.title}</h5>
                      <p><small> {order?.discription}</small></p>   
                      <div className="d-flex justify-content-between align-items-end">
-                            <button className="btn btn-success">Pending</button>
+                            <button className="btn btn-success">{order.status}</button>
                             <button  onClick={() => handleDeleteUser(order._id)} className="btn btn-danger ">Cannel</button>
                         </div>
                     </div>

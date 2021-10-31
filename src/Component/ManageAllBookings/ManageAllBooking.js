@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import OrderDetails from '../OrderDetails/OrderDetails';
+import useAuth from '../../hooks/useAuth';
+import OrderDetails from '../BookingDetails/BookingDetails';
 import AllBookingDetails from './AllBookingDetails';
 
 const ManageAllBooking = () => {
     const [orders, setOrders] = useState([]);
+    const {isLoading} = useAuth();
         useEffect(()=>{
             fetch('https://nameless-island-48040.herokuapp.com/orders')
             .then(res => res.json())
             .then(data=> setOrders(data))
         },[]);
-
+        if (isLoading) {
+            return<div className="spinner-border text-info" role="status"></div>
+            }
 
         return (
             <div className="Order p-4">
